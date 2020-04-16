@@ -19,38 +19,38 @@
 
 <h3>¿Estás buscando unirte al servicio completo de juegos Flash? Por motivos de sobrecarga del servidor, exigimos a todos los interesados que se creen una cuenta.</h3>
 <form id="form1">
-Nombre: <input type="text" name="nombre" placeholder="Nombre"/>
+<label for="nombre"> Nombre: </label> <input type="text" name="nombre" placeholder="Nombre" id="nombre"/>
 <br>
-Apellido: <input type="text" name="apellido" placeholder="Apellido"/>
+<label for="apellido">Apellido: </label><input type="text" name="apellido" placeholder="Apellido" id="apellido"/>
 <br>
-Sexo: <input type="radio" name="sexo" value="hombre" checked> Masculino <input type="radio" name="sexo" value="mujer"> Femenino
+Sexo: <label for="masculino">Masculino </label> <input type="radio" name="sexo" value="hombre" id="masculino" checked> <label for="femenino">Femenino<input type="radio" name="sexo" value="mujer" id="femenino">
 <br>
-Edad: <input type="number" name="edad" min="0" max="122" step="1" value="18">
+<label for="edad">Edad: </label> <input type="number" name="edad" min="0" max="122" step="1" value="18" id="edad">
 <br>
-Email: <input type="email" name="mail" placeholder="Email"/>
+<label for="Email">Email: </label> <input type="email" name="mail" placeholder="Email" id="Email"/>
 <br>
-Usuario: <input type="text" name="user" placeholder="Usuario"/>
+<label for="User"> Usuario: </label> <input type="text" name="user" placeholder="Usuario" id="user"/>
 <br>
-Password: <input type="password" name="contra">
+<label for="passw">Password: </label> <input type="password" name="contra" id="passw">
 <br>
-Confirmar password: <input type="password" name="contra">
+<label for="passconfirm">Confirmar password: </label> <input type="password" name="contra" id="passconfirm">
 <br><br>
 
 ¿Algún interés particular de los juegos?
-<input type="checkbox" name="Acción" value="Accion"> Acción
-<input type="checkbox" name="Aventura" value="Aventura"> Aventura
-<input type="checkbox" name="RPG" value="Matematica"> RPG
-<input type="checkbox" name="Plataforma" value="Lengua"> Plataforma
+<label for="Accion"> Acción </label><input type="checkbox" name="Acción" value="Accion" id="Accion"> / 
+<label for="Aventura">Aventura</label><input type="checkbox" name="Aventura" value="Aventura" id="Aventura"> / 
+<label for="RPG">RPG</label><input type="checkbox" name="RPG" value="RPG" id="RPG"> / 
+<label for="Plataforma">Plataforma </label><input type="checkbox" name="Plataforma" value="Plataforma" id="Plataforma">
 <br>
-¿Motivos adicionales para unirte a este servicio?
-<select name="juegos">
+<label for="Juegos">¿Motivos adicionales para unirte a este servicio?
+<select name="juegos" id="Juegos">
     <option value="Infancia">Quiero volver a jugar juegos de la infancia.</option>
     <option value="Gratuito">Son juegos gratis.</option>
     <option value="Dev">Soy un desarrollador y quiero aportar.</option>
 	<option value="Nulo">Otros/ninguno</option>
 </select>
 <br>
-¿Algún comentario?<textarea name="comentario" rows="5" cols="20">Escribe aquí</textarea>
+<label for="comentario">¿Algún comentario?</label><textarea name="comentario" rows="5" cols="20" id="comentario">Escribe aquí</textarea>
 <br>
 <button type="button">Enviar</button>
 
@@ -58,7 +58,5 @@ Confirmar password: <input type="password" name="contra">
 </body>
 </html>
 <!--
-input tipo texto, radio, numero, email, password, checkbox y submit
-select y option para el selector
-textareae
-Atributo placeholder en todos los inputs-->
+Agregue el atributo alt con el texto alternativo a todas las imágenes de su sitio web.
+Emplee el tag caption para agregar títulos a todas las tablas del sitio web.-->
