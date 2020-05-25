@@ -135,7 +135,7 @@ function resultload(){
 	var urlcomp, canti, unidade;
 	urlcomp=window.location.href.split("/")[10];
 	canti=urlcomp.split("#")[1];
-	unidade=urlcomp.split("#")[2]
+	unidade=urlcomp.split("#")[2];
 	
 	document.getElementById("dist").value= canti + " " + unidade;
 	
@@ -143,14 +143,84 @@ function resultload(){
 
 function DibujarFiguras(){
 var canvas = document.getElementById("myCanvas");
-var ctx = canvas.getContext("2d");
+var ctx = canvas.getContext('2d');
 var ymax = canvas.height;
 var xmax = canvas.width;
 var margen = 5;
-ctx.fillStyle="#DF0174";
-ctx.fillRect=(0+margen, ymax-40-margen, 40, 40);
-ctx.arc=(xmax/2, ymax/2, 20, 0, 2*Math.PI);
+ctx.fillStyle="red";
+ctx.fillRect(0+margen, ymax-40-margen, 40, 40);
+ctx.arc(xmax/2, ymax/2, 20, 0, 2*Math.PI);
 ctx.stroke();
 ctx.fillStyle="#D46634";
 ctx.fill();
 }
+
+var flag;
+function pintar(event){
+	var canvas = document.getElementById("lienzo");
+	var ctx = canvas.getContext('2d');
+	var px = event.clientX;
+	var py = event.clientY;
+	console.log(px, py);
+
+	canvas.onmousedown=function(){flag=true};
+	canvas.onmouseup=function(){flag=false};
+	if(flag){
+		ctx.fillRect(px, py, 6, 6);
+		ctx.fill();
+	}
+}
+
+function cleancanvas(){
+	var canvas = document.getElementById("lienzo");
+	var ctx = canvas.getContext('2d');
+	canvas.width=canvas.width;
+}	
+
+function dibujarCuadricula(){
+	var canvas = document.getElementById("myCanvas");
+	var ctx = canvas.getContext('2d');
+	var ymax = canvas.height;
+	var xmax = canvas.width;
+	for(var i=0; i<ymax;){
+       ctx.moveTo(0,i);
+       ctx.lineTo(xmax,i);
+       ctx.strokeStyle = "#D8D8D8";
+       ctx.stroke();
+       i=i+20;
+   }
+   for(var i=0; i<xmax;){
+       ctx.moveTo(i,0);
+       ctx.lineTo(i,ymax);
+       ctx.strokeStyle = "#D8D8D8";
+       ctx.stroke();
+       i=i+20;
+   }
+
+   ctx.beginPath();
+   ctx.moveTo(xmax,ymax/2);
+   ctx.lineTo(0,ymax/2);
+   ctx.strokeStyle = "#FA5858";
+   ctx.stroke();
+ 
+   ctx.beginPath();
+   ctx.moveTo(xmax/2,0);
+   ctx.lineTo(xmax/2,ymax);
+   ctx.strokeStyle = "#FA5858";
+   ctx.stroke();
+}
+
+function dibujarImage(px, py){
+	var canvas = document.getElementById("myCanvas");
+	var ctx = canvas.getContext('2d');
+	
+	console.log(px, py);
+	var img = new Image();
+	img.src="images/auto.png";
+	
+	canvas.width = canvas.width;
+	
+	img.onload = function(){
+		ctx.drawImage(img, px, py);
+	}
+}	
