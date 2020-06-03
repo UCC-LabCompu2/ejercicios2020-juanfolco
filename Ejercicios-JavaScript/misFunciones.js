@@ -224,3 +224,25 @@ function dibujarImage(px, py){
 		ctx.drawImage(img, px, py);
 	}
 }	
+
+x=0;
+dx=2;
+function animarAuto(){
+	var canvas = document.getElementById("myCanvas");
+	var ctx = canvas.getContext('2d');
+	
+	console.log(x, 0);
+	var img = new Image();
+	img.src="images/auto.png";
+	
+	canvas.width = canvas.width;
+	
+	img.onload = function(){
+		ctx.drawImage(img, x, 100);
+
+	}
+	if(x>canvas.width){
+		x=0;
+	}
+	x+=dx;
+}	
